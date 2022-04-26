@@ -1,28 +1,19 @@
-![angularjs_logo](https://user-images.githubusercontent.com/4659608/37036392-9bf53686-2160-11e8-95fc-bbab638d7d60.png)
+Forked from https://github.com/alhazmy13/angular-csv-ext
 
-# Angular-csv-ext | Export to CSV  in Angular
+# SimpleCSV | Export to CSV in JS/TS
 
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e2133aa828054d7c865563b50100eb8b)](https://www.codacy.com/app/me_101/angular-csv-ext?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alhazmy13/angular-csv-ext&amp;utm_campaign=Badge_Grade)
-[![Build Status](https://travis-ci.org/alhazmy13/angular-csv-ext.svg?branch=master)](https://travis-ci.org/alhazmy13/angular-csv-ext)
-[![npm version](https://badge.fury.io/js/angular-csv-ext.svg)](https://badge.fury.io/js/angular-csv-ext)
-[![GitHub license](https://img.shields.io/github/license/alhazmy13/angular-csv-ext.svg)](https://github.com/alhazmy13/angular-csv-ext)
-![Angular](https://img.shields.io/badge/Angular-%3E%3D5.0-red.svg)
-![npm](https://img.shields.io/npm/dm/angular-csv-ext.svg)
-
-> A helper library for creating CSV files in Angular.
-> 
+> A helper library for creating CSV files in javascript projects.
 
 ## Installation 
 
 ```javascript
-npm install --save angular-csv-ext
+npm install simple-csv-js
 ```
 
 ## Example 
 ```javascript
 
-import { AngularCsv } from 'angular-csv-ext/dist/Angular-csv';
+import { SimpleCsv } from 'simple-csv-js';
 
 var data = [
   {
@@ -48,11 +39,11 @@ var data = [
   },
 ];
 
-new AngularCsv(data, 'My Report');
+new SimpleCsv(data, 'My Report');
 
 ```
 
-## API | **AngularCsv(data, filename, options)**
+## API | **SimpleCsv(data, filename, options)**
 
 
 | Option        | Default           | Description  |
@@ -85,12 +76,6 @@ new AngularCsv(data, 'My Report');
     nullToEmptyString: true,
   };
 
-  AngularCsv(data, filename, options);
+  SimpleCsv(data, filename, options);
 
 ```
-
-## Credits
-
-
- * [sn123](https://github.com/sn123)
- * [arf1980](https://github.com/arf1980)
