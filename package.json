@@ -1,6 +1,6 @@
 {
   "name": "simple-csv-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helper library for creating CSV files in JS",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
