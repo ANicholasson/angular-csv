@@ -1,6 +1,6 @@
 {
   "name": "simple-csv-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helper library for creating CSV files in JS",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -15,7 +15,10 @@
   "keywords": [
     "csv",
     "excel",
-    "angular"
+    "angular-csv",
+    "react-csv",
+    "export-to-csv",
+    "export-to-excel"
   ],
   "author": "Aron Nicholasson",
   "contributors": [
@@ -33,6 +36,11 @@
     }
   ],
   "license": "MIT",
+  "homepage": "https://github.com/ANicholasson/simple-csv-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ANicholasson/simple-csv-js.git"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
