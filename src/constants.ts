@@ -1,6 +1,7 @@
 export class CsvConfigConsts {
   public static EOL = "\r\n";
   public static BOM = "\ufeff";
+
   public static DEFAULT_FIELD_SEPARATOR = ",";
   public static DEFAULT_DECIMAL_SEPARATOR = ".";
   public static DEFAULT_QUOTE = '"';
@@ -19,7 +20,7 @@ export const ConfigDefaults: Options = {
   filename: CsvConfigConsts.DEFAULT_FILENAME,
   fieldSeparator: CsvConfigConsts.DEFAULT_FIELD_SEPARATOR,
   quoteStrings: CsvConfigConsts.DEFAULT_QUOTE,
-  decimalseparator: CsvConfigConsts.DEFAULT_DECIMAL_SEPARATOR,
+  decimalSeparator: CsvConfigConsts.DEFAULT_DECIMAL_SEPARATOR,
   showLabels: CsvConfigConsts.DEFAULT_SHOW_LABELS,
   showTitle: CsvConfigConsts.DEFAULT_SHOW_TITLE,
   title: CsvConfigConsts.DEFAULT_TITLE,
@@ -34,7 +35,7 @@ export interface Options {
   filename: string;
   fieldSeparator: string;
   quoteStrings: string;
-  decimalseparator: string;
+  decimalSeparator: string;
   showLabels: boolean;
   showTitle: boolean;
   title: string;
@@ -43,4 +44,8 @@ export interface Options {
   noDownload: boolean;
   useHeader: boolean;
   nullToEmptyString: boolean;
+}
+
+export interface DataItem {
+  [key: string]: string | number | boolean | Date | null;
 }

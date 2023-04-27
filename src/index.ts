@@ -1,7 +1,5 @@
-import { ConfigDefaults, CsvConfigConsts, Options } from "./constants";
+import {ConfigDefaults, CsvConfigConsts, DataItem, Options} from "./constants";
 
-// TODO Do something with this
-// https://developer.mozilla.org/en-US/docs/Web/API/Navigator/msSaveBlob
 declare global {
   interface Navigator {
     msSaveBlob: (blobOrBase64: Blob | string, filename: string) => void;
@@ -11,12 +9,12 @@ declare global {
 export class SimpleCsv {
   public fileName: string | undefined;
   public labels: Array<String> | undefined;
-  public data: any[];
+  public data: DataItem[];
 
-  private _options: Options;
+  private readonly _options: Options;
   private csv = "";
 
-  constructor(DataJSON: any, filename: string, options?: any) {
+  constructor(DataJSON: DataItem[], filename: string, options?: Partial<Options>) {
     let config = options || {};
 
     this.data = typeof DataJSON != "object" ? JSON.parse(DataJSON) : DataJSON;
@@ -117,14 +115,14 @@ export class SimpleCsv {
    */
   formatData(data: any) {
     if (
-      this._options.decimalseparator === "locale" &&
+      this._options.decimalSeparator === "locale" &&
       SimpleCsv.isFloat(data)
     ) {
       return data.toLocaleString();
     }
 
-    if (this._options.decimalseparator !== "." && SimpleCsv.isFloat(data)) {
-      return data.toString().replace(".", this._options.decimalseparator);
+    if (this._options.decimalSeparator !== "." && SimpleCsv.isFloat(data)) {
+      return data.toString().replace(".", this._options.decimalSeparator);
     }
 
     if (typeof data === "string") {
@@ -170,7 +168,7 @@ let hasOwnProperty = Object.prototype.hasOwnProperty;
 let propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
 /**
- * Convet to Object
+ * Convert to Object
  * @param {any} val
  */
 function toObject(val: any) {
@@ -185,7 +183,7 @@ function toObject(val: any) {
 /**
  * Assign data  to new Object
  * @param {any}   target
- * @param {any[]} ...source
+ * @param {any[]} _source
  */
 function objectAssign(target: any, ..._source: any[]) {
   let from: any;
