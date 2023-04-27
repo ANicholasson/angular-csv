@@ -137,8 +137,7 @@ export class SimpleCsv {
 				for (const index in this.data[i]) {
 					// Check if the property is not inherited
 					if (this.data[i].hasOwnProperty(index)) {
-						row +=
-							this.formatData(this.data[i][index]) + this._options.fieldSeparator;
+						row += this.formatData(this.data[i][index]) + this._options.fieldSeparator;
 					}
 				}
 			}
@@ -177,7 +176,7 @@ export class SimpleCsv {
 		}
 
 		if (this._options.nullToEmptyString) {
-			if (data === null) {
+			if (data === null || data === undefined) {
 				return ("");
 			}
 			return data;
