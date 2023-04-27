@@ -16,7 +16,6 @@ export class CsvConfigConst {
 	public static DEFAULT_USE_HEADER = false;
 	public static DEFAULT_NO_DOWNLOAD = false;
 	public static DEFAULT_NULL_TO_EMPTY_STRING = false;
-
 }
 
 export const ConfigDefaults: Options = {

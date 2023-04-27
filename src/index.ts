@@ -135,8 +135,11 @@ export class SimpleCsv {
 				}
 			} else {
 				for (const index in this.data[i]) {
-					row +=
-						this.formatData(this.data[i][index]) + this._options.fieldSeparator;
+					// Check if the property is not inherited
+					if (this.data[i].hasOwnProperty(index)) {
+						row +=
+							this.formatData(this.data[i][index]) + this._options.fieldSeparator;
+					}
 				}
 			}
 			row = row.slice(0, -1);
